@@ -26,15 +26,35 @@
                             <thead>
                             <tr>
                                 <th scope="col">Id</th>
-                                <th scope="col">Nombre</th>
-                                <th scope="col">Apellido</th>
-                                <th scope="col">Correo</th>
+                                <th scope="col">Titulo</th>
+                                <th scope="col">anio_publicacion</th>
+                                <th scope="col">autor</th>
+                                <th scope="col">clasificacion</th>
+                                <th scope="col">cantidad_paginas</th>
                             </tr>
                             </thead>
+                            <tbody>
+                            @foreach($libros as $libro)
+                                <tr>
+                                    <th scope="row">{{ $libro->id }}</th>
+                                    <td>{{ $libro->titulo }}</td>
+                                    <td>{{ $libro->anio_publicacion }}</td>
+                                    <td>{{ $libro->autor}}</td>
+                                    <td>{{ $libro->clasificacion}}</td>
+                                    <td>{{ $libro->cantidad_paginas}}</td>
+                                    <td>
+                                        <a href="#" class="btn btn-warning btn-sm">Editar</a>
+                                        <form action="#" method="POST" style="display:inline-block;">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('¿Está seguro de que desea eliminar este alumno?')">Eliminar</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endforeach
 
+                            </tbody>
                         </table>
-
-
                 </div>
             </div>
         </div>

@@ -1,4 +1,16 @@
 @extends('layouts.app')
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+    body{
+        background: skyblue;
+    }
+
+    .card{
+        background: bisque;
+        border-radius: 10px;
+        opacity: .8;
+    }
+</style>
 
 @section('content')
 <div class="container">
