@@ -10,7 +10,6 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -20,7 +19,7 @@
                     @endif
                         <h5 class="card-title">Registro</h5>
                         <p>
-                            <a href="#" class="btn btn-secondary">Agregar nuevo Registro </a>
+                            <a href="{{route('libro.create')}}" class="btn btn-secondary">Agregar nuevo Registro </a>
                         </p>
                         <table class="table table-dark table-striped">
                             <thead>
@@ -43,8 +42,8 @@
                                     <td>{{ $libro->clasificacion}}</td>
                                     <td>{{ $libro->cantidad_paginas}}</td>
                                     <td>
-                                        <a href="#" class="btn btn-warning btn-sm">Editar</a>
-                                        <form action="#" method="POST" style="display:inline-block;">
+                                        <a href="{{route('libro.edit',$libro->id)}}" class="btn btn-warning btn-sm">Editar</a>
+                                        <form action="{{route('libro.destroy',$libro->id)}}" method="POST" style="display:inline-block;">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('¿Está seguro de que desea eliminar este alumno?')">Eliminar</button>

@@ -23,9 +23,9 @@ class LibroController extends Controller
         $request->validate([
             'titulo' => 'required|string|max:255',
             'anio_publicacion' => 'required|string|max:255',
-            'autor' => 'required|string|email|max:255',
-            'clasificacion' => 'required|string|email|max:255',
-            'cantidad_paginas' => 'required|string|email|max:255',
+            'autor' => 'required|string|max:255',
+            'clasificacion' => 'required|string|max:255',
+            'cantidad_paginas' => 'required|string|max:255',
         ]);
         Libro::create([
             'titulo' => $request->titulo,
@@ -50,9 +50,9 @@ class LibroController extends Controller
         $request->validate([
             'titulo' => 'required|string|max:255',
             'anio_publicacion' => 'required|string|max:255',
-            'autor' => 'required|string|email|max:255',
-            'clasificacion' => 'required|string|email|max:255',
-            'cantidad_paginas' => 'required|string|email|max:255'.$id,
+            'autor' => 'required|string|max:255',
+            'clasificacion' => 'required|string|max:255',
+            'cantidad_paginas' => 'required|string|max:255'.$id,
         ]);
 
         $libro = Libro::findOrFail($id);
