@@ -1,5 +1,10 @@
 @extends('layouts.app')
-
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+    body{
+        background: khaki;
+    }
+</style>
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -13,8 +18,23 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                        <h5 class="card-title">Registro</h5>
+                        <p>
+                            <a href="#" class="btn btn-secondary">Agregar nuevo Registro </a>
+                        </p>
+                        <table class="table table-dark table-striped">
+                            <thead>
+                            <tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Apellido</th>
+                                <th scope="col">Correo</th>
+                            </tr>
+                            </thead>
 
-                    {{ __('You are logged in!') }}
+                        </table>
+
+
                 </div>
             </div>
         </div>
